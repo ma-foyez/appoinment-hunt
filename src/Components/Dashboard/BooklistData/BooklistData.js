@@ -3,16 +3,16 @@ import './BooklistData.css'
 const BooklistData = ({ booking }) => {
     const [status, setStatus] = useState({});
     const handleStatusChange = (e) => {
-        // const newStatus = e.target.value;
-        // fetch(`https://young-shore-62919.herokuapp.com/updateStatus?id=` + order._id, {
-        //     method: "PATCH",
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify({ status: newStatus })
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         alert('Status updated')
-        //     })
+        const newStatus = e.target.value;
+        fetch(`http://localhost:5000/updateStatus?id=` + booking._id, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ status: newStatus })
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert('Status updated')
+            })
     }
 
     return (

@@ -27,13 +27,13 @@ const Booklist = () => {
                     <SideMenu></SideMenu>
                 </div>
                 <div className="col-md-10 dashboard-container">
-                    <h2 className="ml-4 pb-2 pt-4 font-weight-bold">Services List</h2>
+                    <h2 className="ml-4 pb-2 pt-4 font-weight-bold">Book-List</h2>
                     {
                         loading ?
                             <div className="shadow-sm p-3 ml-4 mr-4 mb-5 bg-white rounded">
                                 <Table responsive className="table-bordered table-hover">
                                     <thead class="thead-light">
-                                        <tr>
+                                        <tr className="text-center">
                                             <th>Name</th>
                                             <th>Email ID</th>
                                             <th>Phone</th>

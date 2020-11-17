@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import DashboardNav from '../DashboardNav/DashboardNav';
+import MyRentData from '../MyRentData/MyRentData';
 import SideMenu from '../SideMenu/SideMenu';
 
 const MyRent = () => {
+    const [BookingData, setBookingData] = useState([]);
     const [loading, setLoading] = useState(false)
 
+    useEffect(() => {
+        fetch('http://localhost:5000/loadHouse')
+            .then(res => res.json())
+            .then(data => {
+                setBookingData(data);
+                setLoading(true);
+            })
+    }, [BookingData]);
     return (
         <section>
             <DashboardNav></DashboardNav>
@@ -20,17 +30,16 @@ const MyRent = () => {
                             <div className="shadow-sm p-3 ml-4 mr-4 mb-5 bg-white rounded">
                                 <Table responsive className="table-bordered table-hover">
                                     <thead class="thead-light">
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email ID</th>
-                                            <th>Service</th>
-                                            <th>Project Details</th>
-                                            <th>Status</th>
+                                        <tr className="text-center">
+                                            <th>House Name</th>
+                                            <th>Price</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+                                        {
+                                            BookingData.map(booking => <MyRentData key={booking._id} booking={booking}></MyRentData>)
+                                        }
                                     </tbody>
                                 </Table>
                             </div> :

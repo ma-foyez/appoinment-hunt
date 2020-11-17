@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import banner from './../../images/images/Rectangle 13.png'
 import './HouseDetails.css'
 import * as ReactBootstrap from 'react-bootstrap';
+import Navigation from '../Shareable/Navigation/Navigation';
 
 const HouseDetails = () => {
     const { houseID } = useParams();
@@ -22,6 +23,7 @@ const HouseDetails = () => {
     // const checkData = houseRent.find(data => data._id.toString() === houseID);
     return (
         <section className="house-details">
+            <Navigation></Navigation>
             <div className="banner-top">
                 <div className="container">
                     <h1 className="text-center pt-2 font-weight-bold">Apartment</h1>
