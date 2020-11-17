@@ -4,7 +4,7 @@ const BooklistData = ({ booking }) => {
     const [status, setStatus] = useState({});
     const handleStatusChange = (e) => {
         const newStatus = e.target.value;
-        fetch(`http://localhost:5000/updateStatus?id=` + booking._id, {
+        fetch(`https://apartment-hunts.herokuapp.com/updateStatus?id=` + booking._id, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ status: newStatus })

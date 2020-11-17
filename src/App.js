@@ -34,24 +34,25 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/login">
+          <Route login
+            path="/login">
             <Login />
           </Route>
-          <Route path="/house/:houseID">
+          <PrivateRoute path="/house/:houseID">
             <HouseDetails />
-          </Route>
-          <Route path="/dashboard">
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
             <Dashboard />
-          </Route>
-          <Route path="/admin/booklist">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/booklist">
             <Booklist />
-          </Route>
-          <Route path="/admin/addhouse">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/addhouse">
             <AddHouse />
-          </Route>
-          <Route path="/admin/myRent">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/myRent">
             <MyRent />
-          </Route>
+          </PrivateRoute>
 
           <Route path="*">
             <NotFound />

@@ -11,7 +11,7 @@ const HouseDetails = () => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:5000/houseDetails?ID=' + houseID)
+        fetch('https://apartment-hunts.herokuapp.com/houseDetails?ID=' + houseID)
             .then(res => res.json())
             .then(data => {
                 setHouseRent(data)

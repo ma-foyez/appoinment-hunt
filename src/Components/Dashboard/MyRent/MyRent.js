@@ -9,7 +9,7 @@ const MyRent = () => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:5000/loadHouse')
+        fetch('https://apartment-hunts.herokuapp.com/loadHouse')
             .then(res => res.json())
             .then(data => {
                 setBookingData(data);

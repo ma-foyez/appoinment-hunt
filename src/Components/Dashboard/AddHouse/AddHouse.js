@@ -27,7 +27,7 @@ const AddHouse = () => {
         formData.append('birthroom', info.birthroom);
         formData.append('price', info.price);
 
-        fetch('http://localhost:5000/addHouse', {
+        fetch('https://apartment-hunts.herokuapp.com/addHouse', {
             method: 'POST',
             body: formData
         })
